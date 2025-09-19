@@ -1,0 +1,1141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chilean Cuisine 2025 - Discover the Rich Flavors of South America</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Georgia, serif;
+            background-color: #f5f1e8;
+            color: #4a4a4a;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        .header {
+            background-color: #d4c4a0;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            color: #5d4e37;
+            margin-bottom: 5px;
+        }
+
+        .header .subtitle {
+            font-size: 1em;
+            color: #6b5b47;
+            margin-bottom: 20px;
+        }
+
+        /* Navigation */
+        .nav {
+            background-color: #c9b896;
+            padding: 15px 0;
+        }
+
+        .nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+        }
+
+        .nav a {
+            color: #5d4e37;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .nav a:hover {
+            background-color: #b8a682;
+        }
+
+        /* Search Section */
+        .search-section {
+            background-color: #e8dcc0;
+            padding: 30px 0;
+            text-align: center;
+        }
+
+        .search-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .search-input {
+            flex: 1;
+            padding: 12px 20px;
+            border: 2px solid #c9b896;
+            border-radius: 25px;
+            font-size: 16px;
+            background-color: white;
+        }
+
+        .search-btn {
+            background-color: #a0956b;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .search-btn:hover {
+            background-color: #8d8458;
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 40px 0;
+        }
+
+        .section {
+            margin-bottom: 50px;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        /* Welcome Section with Image */
+        .welcome-content {
+            display: flex;
+            gap: 30px;
+            align-items: flex-start;
+        }
+
+        .welcome-text {
+            flex: 2;
+        }
+
+        .welcome-image {
+            flex: 1;
+            text-align: center;
+        }
+
+        .welcome-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .image-caption {
+            font-style: italic;
+            color: #6b5b47;
+            margin-top: 10px;
+            font-size: 0.9em;
+        }
+
+        .section h2 {
+            color: #5d4e37;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #d4c4a0;
+            padding-bottom: 10px;
+        }
+
+        .section p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        /* Signature Dishes Box */
+        .signature-box {
+            background-color: #f9f6f0;
+            border: 2px solid #d4c4a0;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .signature-box h3 {
+            color: #5d4e37;
+            margin-bottom: 15px;
+        }
+
+        .signature-box ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .signature-box li {
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .signature-box li:before {
+            content: "•";
+            color: #a0956b;
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        /* Recipe Cards */
+        .recipe-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .recipe-card {
+            background-color: #f9f6f0;
+            border: 2px solid #d4c4a0;
+            border-radius: 10px;
+            padding: 0;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .recipe-card-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px 8px 0 0;
+        }
+
+        .recipe-card-content {
+            padding: 20px;
+        }
+
+        .recipe-card h4 {
+            color: #5d4e37;
+            font-size: 1.3em;
+            margin-bottom: 15px;
+        }
+
+        .recipe-card p {
+            font-size: 0.9em;
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        .recipe-btn {
+            background-color: #a0956b;
+            color: white;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.9em;
+            transition: background-color 0.3s;
+        }
+
+        .recipe-btn:hover {
+            background-color: #8d8458;
+        }
+
+        /* Server Status */
+        .server-status {
+            background-color: #f0f8f0;
+            border-top: 1px solid #d4edda;
+            padding: 15px 0;
+            text-align: center;
+        }
+
+        .status-indicator {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9em;
+            color: #155724;
+            font-weight: 500;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            background-color: #28a745;
+            border-radius: 50%;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(40, 167, 69, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(40, 167, 69, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(40, 167, 69, 0);
+            }
+        }
+
+        /* AI Features Styles */
+        .ai-features-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 30px;
+            align-items: stretch;
+        }
+
+        .ai-feature-card {
+            background-color: #f9f6f0;
+            border: 2px solid #d4c4a0;
+            border-radius: 15px;
+            padding: 25px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+            height: 420px;
+        }
+
+        .ai-feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(93, 78, 55, 0.15);
+        }
+
+        .ai-feature-header {
+            display: block;
+            height: 90px;
+            overflow: hidden;
+        }
+
+        .ai-feature-header h3 {
+            color: #5d4e37;
+            margin-bottom: 10px;
+            font-size: 1.2em;
+            line-height: 1.2;
+            height: 32px;
+        }
+
+        .ai-feature-header p {
+            color: #6b5b47;
+            margin-bottom: 0;
+            font-size: 0.85em;
+            line-height: 1.3;
+            height: 48px;
+            overflow: hidden;
+        }
+
+        .ai-feature-form {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            margin-top: 15px;
+        }
+
+        .form-inputs {
+            flex: 1;
+            min-height: 240px;
+        }
+
+        .ai-input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #c9b896;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            font-size: 14px;
+            font-family: Georgia, serif;
+            transition: border-color 0.3s;
+            background-color: white;
+        }
+
+        .ai-input:focus {
+            outline: none;
+            border-color: #a0956b;
+        }
+
+        .button-container {
+            margin-top: auto;
+            padding-top: 15px;
+        }
+
+        .ai-btn {
+            background: linear-gradient(135deg, #a0956b, #8d8458);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.3s;
+            width: 100%;
+        }
+
+        .ai-btn:hover {
+            background: linear-gradient(135deg, #8d8458, #7a7349);
+            transform: translateY(-2px);
+        }
+
+        .ai-btn:disabled {
+            background: #c9b896;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .ai-search-section {
+            grid-column: 1 / -1;
+            margin-top: 20px;
+            height: auto;
+            padding: 20px;
+        }
+
+        .ai-search-section .ai-feature-header {
+            height: auto;
+            margin-bottom: 15px;
+        }
+
+        .ai-search-section .ai-feature-header h3 {
+            height: auto;
+            margin-bottom: 8px;
+        }
+
+        .ai-search-section .ai-feature-header p {
+            height: auto;
+            margin-bottom: 0;
+        }
+
+        .ai-search-section .ai-feature-form {
+            gap: 15px;
+        }
+
+        .ai-search-section .form-inputs {
+            margin-bottom: 0;
+        }
+
+        .ai-search-section textarea.ai-input {
+            font-family: Georgia, serif;
+            font-size: 14px;
+            line-height: 1.4;
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        .checkbox-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+
+        .checkbox-group label {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 0.9em;
+            cursor: pointer;
+        }
+
+        .dietary-restrictions label:first-child,
+        .recipe-selection label:first-child {
+            font-weight: bold;
+            margin-bottom: 10px;
+            width: 100%;
+        }
+
+        .dietary-restrictions {
+            margin-bottom: 15px;
+        }
+
+        .dietary-restrictions .checkbox-group {
+            margin-top: 10px;
+        }
+
+        .ai-results {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: white;
+            border-radius: 8px;
+            border-left: 4px solid #a0956b;
+            display: none;
+        }
+
+        .ai-results.show {
+            display: block;
+        }
+
+        .ai-status-indicator {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 30px;
+            padding: 15px;
+            background-color: #f0f8f0;
+            border-radius: 8px;
+            font-size: 0.9em;
+        }
+
+        .ai-status-indicator.error {
+            background-color: #ffebee;
+            color: #c62828;
+        }
+
+        .ai-status-indicator.error .status-dot {
+            background-color: #f44336;
+        }
+
+        .substitution-item {
+            background-color: #f9f6f0;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            border-left: 4px solid #a0956b;
+        }
+
+        .substitution-item h4 {
+            color: #5d4e37;
+            margin-bottom: 5px;
+        }
+
+        .shopping-section {
+            margin-bottom: 20px;
+        }
+
+        .shopping-section h4 {
+            color: #5d4e37;
+            margin-bottom: 10px;
+            padding-bottom: 5px;
+            border-bottom: 2px solid #d4c4a0;
+        }
+
+        .shopping-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            border-bottom: 1px solid #d4c4a0;
+        }
+
+        .meal-day {
+            background-color: #f9f6f0;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #a0956b;
+        }
+
+        .meal-day h4 {
+            color: #5d4e37;
+            margin-bottom: 10px;
+        }
+
+        .meal-item {
+            margin-bottom: 8px;
+            padding: 8px;
+            background-color: white;
+            border-radius: 5px;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 20px;
+            color: #6b5b47;
+        }
+
+        .loading::after {
+            content: '';
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #a0956b;
+            border-radius: 50%;
+            border-top-color: transparent;
+            animation: spin 1s linear infinite;
+            margin-left: 10px;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #d4c4a0;
+            padding: 30px 0;
+            text-align: center;
+            color: #5d4e37;
+        }
+
+        .footer p {
+            margin-bottom: 5px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav ul {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .search-container {
+                flex-direction: column;
+            }
+
+            .search-input {
+                width: 100%;
+            }
+
+            .recipe-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .welcome-content {
+                flex-direction: column;
+            }
+
+            .welcome-image {
+                order: -1;
+                margin-bottom: 20px;
+            }
+
+            .ai-features-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .ai-feature-card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <h1>Chilean Cuisine</h1>
+            <p class="subtitle">Discover the Rich Flavors of South America</p>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="container">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#traditional">Traditional Dishes</a></li>
+                <li><a href="#ingredients">Ingredients</a></li>
+                <li><a href="#culture">Food Culture</a></li>
+                <li><a href="#recipes">Recipes</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Search Section -->
+    <section class="search-section">
+        <div class="container">
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Search Chilean Recipes">
+                <button class="search-btn">Search</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Welcome Section -->
+            <section class="section">
+                <h2>Welcome to Chilean Culinary Heritage</h2>
+                <div class="welcome-content">
+                    <div class="welcome-text">
+                        <p>Discover Chilean cuisine, a remarkable fusion that celebrates the country's diverse landscape, from the arid north to the fertile central valleys and the seafood-rich southern coasts. Our culinary traditions reflect a unique blend of indigenous Mapuche ingredients, Spanish colonial influences, and modern international techniques that have evolved over centuries to create distinctive flavors that define Chilean cooking today.</p>
+                        
+                        <p>The backbone of Chilean cooking lies in its exceptional use of fresh, local ingredients - the world's longest coastline provides an abundance of seafood including sea bass, salmon, and an array of shellfish, while the fertile Central Valley produces world-class wines, and a variety of fruits like grapes and avocados that have become synonymous with Chilean gastronomy.</p>
+                        
+                        <p>From the hearty stews of the south to the fresh ceviches of the north, Chilean cuisine tells the story of a nation shaped by geography, climate, and cultural exchange. Experience the incredible diversity of flavors, from the smoky barbecues of the countryside to the sophisticated urban dining scenes of Santiago and Valparaíso, as we explore the culinary treasures that make Chilean food culture so distinctive and celebrated worldwide.</p>
+                    </div>
+                    <div class="welcome-image">
+                        <img src="/images/empanadas.png" alt="Traditional Chilean Empanadas">
+                        <p class="image-caption">Traditional Chilean Empanadas - A beloved pastry filled with seasoned ingredients</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Signature Dishes Section -->
+            <section class="section">
+                <h2>Signature Dishes and Flavors</h2>
+                <p>Among Chilean cuisine's most beloved specialties are dishes that have been passed down through generations, each telling a story of the country's rich cultural heritage and diverse regional influences.</p>
+                
+                <div class="signature-box">
+                    <h3>Must-Try Chilean Dishes:</h3>
+                    <ul>
+                        <li>Cazuela - A hearty slow-cooking traditional stew with pumpkin and corn accompaniments</li>
+                        <li>Pastel de Choclo - A corn casserole layered with meat, chicken, hard-boiled eggs and olives</li>
+                        <li>Completo - A unique Chilean hot dog with distinctive toppings and regional variations</li>
+                        <li>Curanto - A seafood and potato dish cooked in earth ovens, originating from Chiloé Island</li>
+                    </ul>
+                </div>
+                
+                <p>Chilean cuisine particularly showcases ingredients and dishes from Patagonia and the northern regions, with specialties ranging from fresh seafood and lamb dishes to unique preparations of quinoa and other native grains. The country's long coastline provides an abundance of fresh seafood, while the interior regions contribute hearty meat dishes and agricultural products that form the foundation of traditional Chilean cooking.</p>
+            </section>
+
+            <!-- Modern Chilean Gastronomy Section -->
+            <section class="section">
+                <h2>Modern Chilean Gastronomy</h2>
+                <p>Contemporary Chilean cuisine represents a remarkable evolution, seamlessly blending traditional recipes with innovative culinary techniques and international influences. Modern Chilean chefs have gained recognition for their creative interpretations of classic dishes, elevating humble ingredients into sophisticated presentations that honor both tradition and innovation.</p>
+                
+                <p>The new generation of Chilean cuisine embraces both ancestral cooking methods and cutting-edge techniques, creating dishes that surprise and delight while maintaining deep connections to the country's culinary heritage. From molecular gastronomy interpretations of traditional empanadas to contemporary presentations of classic seafood preparations, modern Chilean restaurants are redefining what it means to experience authentic Chilean flavors in the 21st century.</p>
+                
+                <p>Today's Chilean chefs draw inspiration from the country's incredible biodiversity, utilizing indigenous ingredients like merkén (smoked chili pepper), cochayuyo (seaweed), and native fruits to create innovative dishes that tell the story of Chile's landscape and culture. This culinary renaissance has positioned Chilean cuisine as one of South America's most exciting and rapidly evolving food scenes, attracting international attention and establishing Chile as a must-visit destination for food enthusiasts worldwide.</p>
+            </section>
+
+            <!-- AI Features Section -->
+            <section class="section">
+                <h2>🤖 AI-Powered Cooking Assistant</h2>
+                <p>Enhance your Chilean cooking experience with our intelligent features powered by Gemini AI.</p>
+                
+                <div class="ai-features-grid">
+                    <!-- Ingredient Substitution -->
+                    <div class="ai-feature-card">
+                        <div class="ai-feature-header">
+                            <h3>🔄 Ingredient Substitution</h3>
+                            <p>Missing an ingredient? Get smart alternatives that work perfectly in Chilean cuisine.</p>
+                        </div>
+                        <div class="ai-feature-form">
+                            <div class="form-inputs">
+                                <input type="text" id="ingredient-input" placeholder="Enter ingredient (e.g., buttermilk)" class="ai-input">
+                                <input type="text" id="recipe-context" placeholder="Recipe context (optional)" class="ai-input">
+                                <div class="dietary-restrictions">
+                                    <label>Dietary Restrictions:</label>
+                                    <div class="checkbox-group">
+                                        <label><input type="checkbox" value="vegetarian"> Vegetarian</label>
+                                        <label><input type="checkbox" value="vegan"> Vegan</label>
+                                        <label><input type="checkbox" value="gluten-free"> Gluten-Free</label>
+                                        <label><input type="checkbox" value="dairy-free"> Dairy-Free</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="button-container">
+                                <button id="get-substitutions" class="ai-btn">Get Substitutions</button>
+                            </div>
+                        </div>
+                        <div id="substitution-results" class="ai-results"></div>
+                    </div>
+
+                    <!-- Weekly Meal Planning -->
+                    <div class="ai-feature-card">
+                        <div class="ai-feature-header">
+                            <h3>📅 Weekly Meal Planning</h3>
+                            <p>Create balanced meal plans with Chilean cuisine favorites.</p>
+                        </div>
+                        <div class="ai-feature-form">
+                            <div class="form-inputs">
+                                <select id="skill-level" class="ai-input">
+                                    <option value="beginner">Beginner</option>
+                                    <option value="intermediate" selected>Intermediate</option>
+                                    <option value="advanced">Advanced</option>
+                                </select>
+                                <select id="prep-time" class="ai-input">
+                                    <option value="quick">Quick Meals (&lt;30 min)</option>
+                                    <option value="moderate" selected>Moderate (30-60 min)</option>
+                                    <option value="elaborate">Elaborate (&gt;60 min)</option>
+                                </select>
+                            </div>
+                            <div class="button-container">
+                                <button id="create-meal-plan" class="ai-btn">Create Meal Plan</button>
+                            </div>
+                        </div>
+                        <div id="meal-plan-results" class="ai-results"></div>
+                    </div>
+
+                    <!-- AI Smart Search -->
+                    <div class="ai-feature-card ai-search-section">
+                        <div class="ai-feature-header">
+                            <h3>🔍 Smart Search</h3>
+                            <p>Solve common cooking problems like "I have ingredients but I don't know what to cook"</p>
+                        </div>
+                        <div class="ai-feature-form">
+                            <div class="form-inputs">
+                                <textarea id="smart-search-input" placeholder="Describe your cooking situation... (e.g., 'I have chicken, onions, and rice but don't know what Chilean dish to make')" class="ai-input" rows="3"></textarea>
+                            </div>
+                            <div class="button-container">
+                                <button id="smart-search-btn" class="ai-btn">Get Smart Suggestions</button>
+                            </div>
+                        </div>
+                        <div id="smart-search-results" class="ai-results"></div>
+                    </div>
+                </div>
+
+                <!-- AI Status Indicator -->
+                <div id="ai-status" class="ai-status-indicator">
+                    <span class="status-dot"></span>
+                    <span id="ai-status-text">Checking AI service...</span>
+                </div>
+            </section>
+
+            <!-- Featured Recipes Section -->
+            <section class="section">
+                <h2>Featured Chilean Recipes</h2>
+                <div class="recipe-grid">
+                    <div class="recipe-card">
+                        <img src="/images/empanadaspino.png" alt="Empanadas de Pino" class="recipe-card-image">
+                        <div class="recipe-card-content">
+                            <h4>Empanadas de Pino</h4>
+                            <p>Traditional Chilean pastries filled with seasoned ground beef, onions, hard-boiled eggs, black olives, and raisins. These golden pastries are perfect for any occasion.</p>
+                            <button class="recipe-btn">View Recipe</button>
+                        </div>
+                    </div>
+                    
+                    <div class="recipe-card">
+                        <img src="/images/pasteldechoclo.png" alt="Pastel de Choclo" class="recipe-card-image">
+                        <div class="recipe-card-content">
+                            <h4>Pastel de Choclo</h4>
+                            <p>A beloved corn casserole featuring layers of seasoned ground meat, chicken, hard-boiled eggs, and olives, topped with creamy corn mixture and baked to perfection.</p>
+                            <button class="recipe-btn">View Recipe</button>
+                        </div>
+                    </div>
+                    
+                    <div class="recipe-card">
+                        <img src="/images/cazuela.png" alt="Cazuela" class="recipe-card-image">
+                        <div class="recipe-card-content">
+                            <h4>Cazuela</h4>
+                            <p>A traditional Chilean stew with meat, vegetables, and potatoes, slow-cooked to perfection. This hearty dish represents the comfort food of Chilean home cooking.</p>
+                            <button class="recipe-btn">View Recipe</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Server Status -->
+    <div class="server-status">
+        <div class="container">
+            <div class="status-indicator">
+                <span class="status-dot"></span>
+                <span class="status-text">Node.js Server Running</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>© 2025 Chilean Culinary Heritage. All rights reserved.</p>
+            <p>Celebrating the rich flavors of South America</p>
+        </div>
+    </footer>
+
+    <script>
+        // Recipe data for AI features
+        const recipeData = {
+            empanadas: {
+                name: "Empanadas de Pino",
+                ingredients: ["500g ground beef", "2 large onions", "4 hard-boiled eggs", "1 cup black olives", "1/2 cup raisins", "2 packages empanada dough", "Salt, pepper, cumin"]
+            },
+            pastel: {
+                name: "Pastel de Choclo",
+                ingredients: ["2 cups corn kernels", "500g ground meat", "2 chicken breasts", "4 hard-boiled eggs", "1 cup black olives", "1 cup milk", "2 tbsp butter"]
+            },
+            cazuela: {
+                name: "Cazuela",
+                ingredients: ["500g beef or chicken", "4 potatoes", "1 cup pumpkin", "2 corn cobs", "1 cup green beans", "1/2 cup rice"]
+            }
+        };
+
+        // Check AI service status on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            checkAIStatus();
+        });
+
+        async function checkAIStatus() {
+            const statusElement = document.getElementById('ai-status');
+            const statusText = document.getElementById('ai-status-text');
+            
+            try {
+                const response = await fetch('/api/ai/status');
+                
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                }
+                
+                const data = await response.json();
+                
+                if (data.configured) {
+                    statusElement.classList.remove('error');
+                    statusText.textContent = 'AI Features Available ✓';
+                } else {
+                    statusElement.classList.add('error');
+                    statusText.textContent = 'AI Features Unavailable - Configure API Key';
+                }
+            } catch (error) {
+                console.error('AI Status Check Error:', error);
+                statusElement.classList.add('error');
+                statusText.textContent = 'AI Service Connection Error';
+            }
+        }
+
+        // Ingredient Substitution
+        document.getElementById('get-substitutions').addEventListener('click', async function() {
+            const ingredient = document.getElementById('ingredient-input').value.trim();
+            const recipeContext = document.getElementById('recipe-context').value.trim();
+            const dietaryRestrictions = Array.from(document.querySelectorAll('.dietary-restrictions input[type="checkbox"]:checked')).map(cb => cb.value);
+            
+            if (!ingredient) {
+                alert('Please enter an ingredient');
+                return;
+            }
+
+            const button = this;
+            const resultsDiv = document.getElementById('substitution-results');
+            
+            button.disabled = true;
+            button.textContent = 'Getting Substitutions...';
+            resultsDiv.innerHTML = '<div class="loading">Analyzing ingredient and finding alternatives</div>';
+            resultsDiv.classList.add('show');
+
+            try {
+                const response = await fetch('/api/ai/ingredient-substitution', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        ingredient,
+                        dietaryRestrictions,
+                        recipeContext
+                    })
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    displaySubstitutions(data.substitutions, resultsDiv);
+                } else {
+                    resultsDiv.innerHTML = `<div class="error">Error: ${data.error}</div>`;
+                }
+            } catch (error) {
+                resultsDiv.innerHTML = '<div class="error">Failed to get substitutions. Please try again.</div>';
+            } finally {
+                button.disabled = false;
+                button.textContent = 'Get Substitutions';
+            }
+        });
+
+        function displaySubstitutions(substitutions, container) {
+            let html = '<h4>Ingredient Substitutions:</h4>';
+            substitutions.forEach(sub => {
+                html += `
+                    <div class="substitution-item">
+                        <h4>${sub.substitute} (${sub.ratio})</h4>
+                        <p><strong>Why it works:</strong> ${sub.reason}</p>
+                        <p><strong>Notes:</strong> ${sub.notes}</p>
+                    </div>
+                `;
+            });
+            container.innerHTML = html;
+        }
+
+        // Smart Search
+        document.getElementById('smart-search-btn').addEventListener('click', async function() {
+            const query = document.getElementById('smart-search-input').value.trim();
+            
+            if (!query) {
+                alert('Please describe your cooking situation');
+                return;
+            }
+
+            const button = this;
+            const resultsDiv = document.getElementById('smart-search-results');
+            
+            button.disabled = true;
+            button.textContent = 'Searching...';
+            resultsDiv.innerHTML = '<div class="loading">Analyzing your situation and finding solutions</div>';
+            resultsDiv.classList.add('show');
+
+            try {
+                const response = await fetch('/api/ai/smart-search', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ query })
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    displaySmartSearchResults(data.suggestions, resultsDiv);
+                } else {
+                    resultsDiv.innerHTML = `<div class="error">Error: ${data.error}</div>`;
+                }
+            } catch (error) {
+                resultsDiv.innerHTML = '<div class="error">Failed to get suggestions. Please try again.</div>';
+            } finally {
+                button.disabled = false;
+                button.textContent = 'Get Smart Suggestions';
+            }
+        });
+
+        function displaySmartSearchResults(suggestions, container) {
+            let html = '<h4>Smart Cooking Suggestions:</h4>';
+            
+            // Primary suggestions
+            if (suggestions.primary_suggestions && suggestions.primary_suggestions.length > 0) {
+                html += '<div style="margin-bottom: 20px;"><h5 style="color: #5d4e37; margin-bottom: 10px;">Recommended Dishes:</h5>';
+                suggestions.primary_suggestions.forEach(dish => {
+                    html += `
+                        <div class="substitution-item">
+                            <h4>${dish.dish_name} (${dish.prep_time}, ${dish.difficulty})</h4>
+                            <p><strong>Description:</strong> ${dish.description}</p>
+                            ${dish.ingredients_needed && dish.ingredients_needed.length > 0 ? 
+                                `<p><strong>Additional ingredients needed:</strong> ${dish.ingredients_needed.join(', ')}</p>` : ''}
+                            <p><strong>Cooking Tips:</strong> ${dish.cooking_tips}</p>
+                        </div>
+                    `;
+                });
+                html += '</div>';
+            }
+            
+            // Alternative options
+            if (suggestions.alternative_options && suggestions.alternative_options.length > 0) {
+                html += '<div style="margin-bottom: 20px;"><h5 style="color: #5d4e37; margin-bottom: 10px;">Alternative Approaches:</h5>';
+                suggestions.alternative_options.forEach(option => {
+                    html += `
+                        <div style="background-color: #f9f6f0; padding: 10px; margin-bottom: 8px; border-radius: 5px; border-left: 3px solid #a0956b;">
+                            <strong>${option.option}:</strong> ${option.explanation}
+                        </div>
+                    `;
+                });
+                html += '</div>';
+            }
+            
+            // General advice
+            if (suggestions.general_advice) {
+                html += `
+                    <div style="margin-top: 20px; padding: 15px; background-color: #e8dcc0; border-radius: 8px;">
+                        <h5 style="color: #5d4e37; margin-bottom: 10px;">General Advice:</h5>
+                        <p>${suggestions.general_advice}</p>
+                    </div>
+                `;
+            }
+            
+            container.innerHTML = html;
+        }
+
+        // Meal Planning
+        document.getElementById('create-meal-plan').addEventListener('click', async function() {
+            const skillLevel = document.getElementById('skill-level').value;
+            const prepTime = document.getElementById('prep-time').value;
+            
+            const button = this;
+            const resultsDiv = document.getElementById('meal-plan-results');
+            
+            button.disabled = true;
+            button.textContent = 'Creating Plan...';
+            resultsDiv.innerHTML = '<div class="loading">Designing your weekly meal plan</div>';
+            resultsDiv.classList.add('show');
+
+            try {
+                const response = await fetch('/api/ai/meal-plan', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        preferences: {
+                            skillLevel,
+                            prepTime,
+                            dietaryGoals: ['balanced nutrition'],
+                            budget: 'moderate'
+                        }
+                    })
+                });
+
+                const data = await response.json();
+
+                if (response.ok) {
+                    displayMealPlan(data.meal_plan, resultsDiv);
+                } else {
+                    resultsDiv.innerHTML = `<div class="error">Error: ${data.error}</div>`;
+                }
+            } catch (error) {
+                resultsDiv.innerHTML = '<div class="error">Failed to create meal plan. Please try again.</div>';
+            } finally {
+                button.disabled = false;
+                button.textContent = 'Create Meal Plan';
+            }
+        });
+
+        function displayMealPlan(mealPlan, container) {
+            let html = '<h4>Your Weekly Meal Plan:</h4>';
+            
+            mealPlan.week_plan.forEach(day => {
+                html += `
+                    <div class="meal-day">
+                        <h4>${day.day}</h4>
+                        <div class="meal-item">
+                            <strong>Breakfast:</strong> ${day.breakfast.dish} (${day.breakfast.prep_time}, ${day.breakfast.difficulty})
+                        </div>
+                        <div class="meal-item">
+                            <strong>Lunch:</strong> ${day.lunch.dish} (${day.lunch.prep_time}, ${day.lunch.difficulty})
+                        </div>
+                        <div class="meal-item">
+                            <strong>Dinner:</strong> ${day.dinner.dish} (${day.dinner.prep_time}, ${day.dinner.difficulty})
+                        </div>
+                        <small><strong>Prep Notes:</strong> ${day.prep_notes}</small>
+                    </div>
+                `;
+            });
+            
+            html += `
+                <div style="margin-top: 20px; padding: 15px; background-color: #fff3e0; border-radius: 8px;">
+                    <h4>Weekly Strategy:</h4>
+                    <p><strong>Skill Progression:</strong> ${mealPlan.shopping_strategy.skill_progression}</p>
+                    <p><strong>Nutrition Balance:</strong> ${mealPlan.weekly_nutrition_balance}</p>
+                    <p><strong>Estimated Cost:</strong> ${mealPlan.estimated_total_cost}</p>
+                </div>
+            `;
+            
+            container.innerHTML = html;
+        }
+
+        // Original search functionality
+        document.querySelector('.search-btn').addEventListener('click', function() {
+            const searchTerm = document.querySelector('.search-input').value;
+            if (searchTerm.trim()) {
+                alert('Searching for: ' + searchTerm);
+            }
+        });
+
+        document.querySelector('.search-input').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                document.querySelector('.search-btn').click();
+            }
+        });
+
+        document.querySelectorAll('.recipe-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const recipeName = this.parentElement.querySelector('h4').textContent;
+                alert('Opening recipe for: ' + recipeName);
+            });
+        });
+    </script>
+</body>
+</html>
