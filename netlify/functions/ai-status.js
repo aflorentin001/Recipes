@@ -27,7 +27,18 @@ exports.handler = async (event, context) => {
 
   try {
     const apiKey = process.env.GEMINI_API_KEY;
-    const isConfigured = apiKey && apiKey !== 'your_gemini_api_key_here';
+    const isConfigured = apiKey && apiKey !== 'your_gemini_api_key_here' && apiKey.length > 10;
+
+    let message;
+    if (!apiKey) {
+      message = 'GEMINI_API_KEY environment variable not set in Netlify';
+    } else if (apiKey === 'your_gemini_api_key_here') {
+      message = 'Please replace placeholder API key with your actual Gemini API key';
+    } else if (apiKey.length <= 10) {
+      message = 'GEMINI_API_KEY appears to be invalid (too short)';
+    } else {
+      message = 'AI features are available';
+    }
 
     return {
       statusCode: 200,
@@ -37,9 +48,12 @@ exports.handler = async (event, context) => {
       },
       body: JSON.stringify({
         configured: isConfigured,
-        message: isConfigured 
-          ? 'AI features are available' 
-          : 'Please configure your Gemini API key in the environment variables'
+        message: message,
+        debug: {
+          hasApiKey: !!apiKey,
+          keyLength: apiKey ? apiKey.length : 0,
+          keyPrefix: apiKey ? apiKey.substring(0, 8) + '...' : 'none'
+        }
       }),
     };
   } catch (error) {
