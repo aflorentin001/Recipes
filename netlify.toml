@@ -1,6 +1,6 @@
 [build]
-  # Build command - install dependencies at root level
-  command = "npm install && cd nodejs-app && npm install"
+  # Build command - install dependencies and copy images
+  command = "npm install && cd nodejs-app && npm install && cp ../*.png public/"
   
   # Directory to publish (where the static files are)
   publish = "nodejs-app/public"

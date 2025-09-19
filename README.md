@@ -73,7 +73,7 @@ This app is ready for deployment on Netlify with serverless functions for AI fea
 1. **Fork/Clone this repository**
 2. **Connect to Netlify**: Link your GitHub repository
 3. **Configure build settings**:
-   - Build command: `npm install && cd nodejs-app && npm install`
+   - Build command: `npm install && cd nodejs-app && npm install && cp ../*.png public/`
    - Publish directory: `nodejs-app/public`
    - Functions directory: `netlify/functions`
 4. **Set environment variables**:

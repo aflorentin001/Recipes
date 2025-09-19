@@ -9,8 +9,11 @@ const PORT = process.env.PORT || 3000;
 // Serve static files from the public directory
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Serve images from the root directory
+// Serve images from the root directory (for local development)
 app.use('/images', express.static(path.join(__dirname, '..')));
+
+// Also serve images directly from public directory (for both local and deployed)
+app.use(express.static(path.join(__dirname, '..')));
 
 // Parse JSON bodies
 app.use(express.json());

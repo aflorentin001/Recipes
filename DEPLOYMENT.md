@@ -18,7 +18,7 @@ This guide will help you deploy your Chilean Recipe App with AI features to Netl
 4. Select your repository: `aflorentin001/Recipes`
 5. Configure build settings:
    - **Base directory**: Leave empty (root)
-   - **Build command**: `npm install && cd nodejs-app && npm install`
+   - **Build command**: `npm install && cd nodejs-app && npm install && cp ../*.png public/`
    - **Publish directory**: `nodejs-app/public`
    - **Functions directory**: `netlify/functions`
 
@@ -76,7 +76,7 @@ If you need to manually configure build settings:
 
 ```
 Base directory: (leave empty)
-Build command: npm install && cd nodejs-app && npm install
+Build command: npm install && cd nodejs-app && npm install && cp ../*.png public/
 Publish directory: nodejs-app/public
 Functions directory: netlify/functions
 ```
