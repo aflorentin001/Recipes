@@ -1,6 +1,6 @@
 [build]
-  # Build command (not needed for static sites, but good to have)
-  command = "cd nodejs-app && npm install"
+  # Build command - install dependencies at root level
+  command = "npm install && cd nodejs-app && npm install"
   
   # Directory to publish (where the static files are)
   publish = "nodejs-app/public"

@@ -73,7 +73,7 @@ This app is ready for deployment on Netlify with serverless functions for AI fea
 1. **Fork/Clone this repository**
 2. **Connect to Netlify**: Link your GitHub repository
 3. **Configure build settings**:
-   - Build command: `cd nodejs-app && npm install`
+   - Build command: `npm install && cd nodejs-app && npm install`
    - Publish directory: `nodejs-app/public`
    - Functions directory: `netlify/functions`
 4. **Set environment variables**:
@@ -88,6 +88,7 @@ This app is ready for deployment on Netlify with serverless functions for AI fea
 CAP3321_Assignment_Alejandra Florentin/
 ├── README.md                    # Project documentation
 ├── DEPLOYMENT.md               # Netlify deployment guide
+├── package.json                # Top-level dependencies for Netlify
 ├── netlify.toml                # Netlify configuration
 ├── .gitignore                  # Git ignore rules
 ├── *.png                       # Recipe images served from root
@@ -102,7 +103,7 @@ CAP3321_Assignment_Alejandra Florentin/
 │       ├── ai-meal-plan.js    # Meal planning
 │       └── ai-smart-search.js # Smart cooking search
 └── nodejs-app/                # Web application
-    ├── package.json           # Project dependencies and scripts
+    ├── package.json           # Local development dependencies
     ├── server.js              # Express server (local dev)
     ├── .env                   # Environment variables (gitignored)
     ├── .gitignore            # Local git ignore rules

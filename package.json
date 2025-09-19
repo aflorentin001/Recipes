@@ -1,0 +1,35 @@
+{
+  "name": "chilean-recipe-app-netlify",
+  "version": "1.0.0",
+  "description": "Chilean Recipe Collection with AI-powered features - Netlify deployment",
+  "main": "index.js",
+  "scripts": {
+    "build": "cd nodejs-app && npm install",
+    "dev": "cd nodejs-app && npm run dev",
+    "start": "cd nodejs-app && npm start"
+  },
+  "keywords": [
+    "chilean",
+    "recipes",
+    "cuisine",
+    "ai",
+    "gemini",
+    "netlify",
+    "serverless"
+  ],
+  "author": "Alejandra Florentin",
+  "license": "MIT",
+  "dependencies": {
+    "@google/generative-ai": "^0.2.1",
+    "express": "^4.18.2",
+    "dotenv": "^16.3.1"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/aflorentin001/Recipes.git"
+  },
+  "homepage": "https://github.com/aflorentin001/Recipes#readme"
+}
