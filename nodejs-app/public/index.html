@@ -472,39 +472,6 @@
             display: none;
         }
 
-        .ai-results.show {
-            display: block;
-        }
-
-        .ai-status-indicator {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            margin-top: 30px;
-            padding: 15px;
-            background-color: #f0f8f0;
-            border-radius: 8px;
-            font-size: 0.9em;
-        }
-
-        .ai-status-indicator.error {
-            background-color: #ffebee;
-            color: #c62828;
-        }
-
-        .ai-status-indicator.error .status-dot {
-            background-color: #f44336;
-        }
-
-        .substitution-item {
-            background-color: #f9f6f0;
-            padding: 15px;
-            margin-bottom: 10px;
-            border-radius: 8px;
-            border-left: 4px solid #a0956b;
-        }
-
         .substitution-item h4 {
             color: #5d4e37;
             margin-bottom: 5px;
@@ -782,11 +749,6 @@
                     </div>
                 </div>
 
-                <!-- AI Status Indicator -->
-                <div id="ai-status" class="ai-status-indicator">
-                    <span class="status-dot"></span>
-                    <span id="ai-status-text">Checking AI service...</span>
-                </div>
             </section>
 
             <!-- Featured Recipes Section -->
@@ -859,37 +821,6 @@
             }
         };
 
-        // Check AI service status on page load
-        document.addEventListener('DOMContentLoaded', function() {
-            checkAIStatus();
-        });
-
-        async function checkAIStatus() {
-            const statusElement = document.getElementById('ai-status');
-            const statusText = document.getElementById('ai-status-text');
-            
-            try {
-                const response = await fetch('/api/ai/status');
-                
-                if (!response.ok) {
-                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
-                }
-                
-                const data = await response.json();
-                
-                if (data.configured) {
-                    statusElement.classList.remove('error');
-                    statusText.textContent = 'AI Features Available ✓';
-                } else {
-                    statusElement.classList.add('error');
-                    statusText.textContent = 'AI Features Unavailable - Configure API Key';
-                }
-            } catch (error) {
-                console.error('AI Status Check Error:', error);
-                statusElement.classList.add('error');
-                statusText.textContent = 'AI Service Connection Error';
-            }
-        }
 
         // Ingredient Substitution
         document.getElementById('get-substitutions').addEventListener('click', async function() {
