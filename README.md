@@ -60,20 +60,53 @@ A beautiful and interactive Node.js web application showcasing traditional Chile
    http://localhost:3000
    ```
 
+## Netlify Deployment
+
+This app is ready for deployment on Netlify with serverless functions for AI features.
+
+### Quick Deploy to Netlify
+
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/aflorentin001/Recipes)
+
+### Manual Deployment
+
+1. **Fork/Clone this repository**
+2. **Connect to Netlify**: Link your GitHub repository
+3. **Configure build settings**:
+   - Build command: `cd nodejs-app && npm install`
+   - Publish directory: `nodejs-app/public`
+   - Functions directory: `netlify/functions`
+4. **Set environment variables**:
+   - `GEMINI_API_KEY`: Your Google Gemini API key
+5. **Deploy**: Netlify will automatically build and deploy
+
+📖 **Detailed deployment guide**: See [DEPLOYMENT.md](DEPLOYMENT.md)
+
 ## Project Structure
 
 ```
 CAP3321_Assignment_Alejandra Florentin/
 ├── README.md                    # Project documentation
+├── DEPLOYMENT.md               # Netlify deployment guide
+├── netlify.toml                # Netlify configuration
+├── .gitignore                  # Git ignore rules
 ├── *.png                       # Recipe images served from root
-├── services/                   # Business logic services
+├── screenshots/                # Project screenshots
+├── services/                   # Business logic services (local dev)
 │   └── aiService.js           # Gemini AI integration
+├── netlify/                   # Netlify serverless functions
+│   └── functions/             # AI API endpoints
+│       ├── package.json       # Function dependencies
+│       ├── ai-status.js       # AI service status
+│       ├── ai-ingredient-substitution.js
+│       ├── ai-meal-plan.js    # Meal planning
+│       └── ai-smart-search.js # Smart cooking search
 └── nodejs-app/                # Web application
     ├── package.json           # Project dependencies and scripts
-    ├── server.js              # Express server configuration
+    ├── server.js              # Express server (local dev)
     ├── .env                   # Environment variables (gitignored)
-    ├── .gitignore            # Git ignore rules
-    └── public/               # Static files served by Express
+    ├── .gitignore            # Local git ignore rules
+    └── public/               # Static files (deployed to Netlify)
         ├── index.html        # Main HTML file with AI features
         ├── styles.css        # Chilean-themed CSS styles
         └── script.js         # Interactive JavaScript functionality
