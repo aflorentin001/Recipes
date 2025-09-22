@@ -105,14 +105,18 @@ app.post('/api/ai/meal-plan', async (req, res) => {
 
 // AI Feature: Smart Search
 app.post('/api/ai/smart-search', async (req, res) => {
+    console.log('🔍 Smart Search request received:', req.body);
     try {
         const { query } = req.body;
         
         if (!query || !query.trim()) {
+            console.log('❌ No query provided');
             return res.status(400).json({ error: 'Search query is required' });
         }
 
+        console.log('🤖 Calling AI service for query:', query.trim());
         const suggestions = await aiService.smartSearch(query.trim());
+        console.log('✅ AI service returned suggestions');
 
         res.json({
             query,
@@ -120,7 +124,8 @@ app.post('/api/ai/smart-search', async (req, res) => {
             generated_at: new Date().toISOString()
         });
     } catch (error) {
-        console.error('Smart search error:', error);
+        console.error('❌ Smart search error:', error.message);
+        console.error('Full error:', error);
         res.status(500).json({ 
             error: 'Failed to generate smart suggestions',
             message: error.message 

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Search Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .test-container {
+            background-color: #f5f5f5;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        .ai-input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .ai-btn {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .ai-btn:hover {
+            background-color: #0056b3;
+        }
+        .ai-results {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: white;
+            border-radius: 8px;
+            border-left: 4px solid #007bff;
+            display: none;
+        }
+        .ai-results.show {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h1>Smart Search Test Page</h1>
+    
+    <div class="test-container">
+        <h2>Test Smart Search Functionality</h2>
+        <p>This is a simple test to verify the Smart Search button works.</p>
+        
+        <textarea id="smart-search-input" class="ai-input" rows="3" placeholder="Describe your cooking situation... (e.g., 'I have chicken, onions, and rice but don't know what Chilean dish to make')"></textarea>
+        
+        <button id="smart-search-btn" class="ai-btn">Get Smart Suggestions</button>
+        
+        <div id="smart-search-results" class="ai-results"></div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOM loaded, setting up Smart Search test...');
+            
+            const smartSearchBtn = document.getElementById('smart-search-btn');
+            const smartSearchInput = document.getElementById('smart-search-input');
+            
+            console.log('Smart Search Button:', smartSearchBtn);
+            console.log('Smart Search Input:', smartSearchInput);
+            
+            if (smartSearchBtn) {
+                console.log('Adding click listener to Smart Search button');
+                smartSearchBtn.addEventListener('click', async function() {
+                    console.log('Smart Search button clicked!');
+                    
+                    const query = smartSearchInput.value.trim();
+                    
+                    if (!query) {
+                        alert('Please describe your cooking situation');
+                        return;
+                    }
+
+                    const button = this;
+                    const resultsDiv = document.getElementById('smart-search-results');
+                    
+                    button.disabled = true;
+                    button.textContent = 'Searching...';
+                    resultsDiv.innerHTML = '<div>Analyzing your situation and finding solutions...</div>';
+                    resultsDiv.classList.add('show');
+
+                    try {
+                        const response = await fetch('/api/ai/smart-search', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json',
+                            },
+                            body: JSON.stringify({ query })
+                        });
+
+                        const data = await response.json();
+                        console.log('API Response:', data);
+
+                        if (response.ok) {
+                            resultsDiv.innerHTML = '<h4>Success!</h4><pre>' + JSON.stringify(data.suggestions, null, 2) + '</pre>';
+                        } else {
+                            resultsDiv.innerHTML = `<div style="color: red;">Error: ${data.error}</div>`;
+                        }
+                    } catch (error) {
+                        console.error('Error:', error);
+                        resultsDiv.innerHTML = '<div style="color: red;">Failed to get suggestions. Please try again.</div>';
+                    } finally {
+                        button.disabled = false;
+                        button.textContent = 'Get Smart Suggestions';
+                    }
+                });
+            } else {
+                console.error('Smart Search button not found!');
+            }
+        });
+    </script>
+</body>
+</html>

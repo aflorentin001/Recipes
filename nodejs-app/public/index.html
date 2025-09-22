@@ -472,6 +472,10 @@
             display: none;
         }
 
+        .ai-results.show {
+            display: block;
+        }
+
         .substitution-item h4 {
             color: #5d4e37;
             margin-bottom: 5px;
@@ -608,6 +612,7 @@
                 <li><a href="#ingredients">Ingredients</a></li>
                 <li><a href="#culture">Food Culture</a></li>
                 <li><a href="#recipes">Recipes</a></li>
+                <li><a href="#ai-features">AI Features</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
@@ -627,7 +632,7 @@
     <main class="main-content">
         <div class="container">
             <!-- Welcome Section -->
-            <section class="section">
+            <section id="home" class="section">
                 <h2>Welcome to Chilean Culinary Heritage</h2>
                 <div class="welcome-content">
                     <div class="welcome-text">
@@ -645,7 +650,7 @@
             </section>
 
             <!-- Signature Dishes Section -->
-            <section class="section">
+            <section id="traditional" class="section">
                 <h2>Signature Dishes and Flavors</h2>
                 <p>Among Chilean cuisine's most beloved specialties are dishes that have been passed down through generations, each telling a story of the country's rich cultural heritage and diverse regional influences.</p>
                 
@@ -662,8 +667,28 @@
                 <p>Chilean cuisine particularly showcases ingredients and dishes from Patagonia and the northern regions, with specialties ranging from fresh seafood and lamb dishes to unique preparations of quinoa and other native grains. The country's long coastline provides an abundance of fresh seafood, while the interior regions contribute hearty meat dishes and agricultural products that form the foundation of traditional Chilean cooking.</p>
             </section>
 
+            <!-- Ingredients Section -->
+            <section id="ingredients" class="section">
+                <h2>Essential Chilean Ingredients</h2>
+                <p>Chilean cuisine is built upon a foundation of unique ingredients that reflect the country's diverse geography and rich cultural heritage. From the Pacific Ocean's bounty to the Andes Mountains' treasures, these ingredients define the authentic flavors of Chilean cooking.</p>
+                
+                <div class="signature-box">
+                    <h3>Key Ingredients in Chilean Cuisine:</h3>
+                    <ul>
+                        <li>Merkén - A smoky chili pepper seasoning from the Mapuche tradition</li>
+                        <li>Cochayuyo - A type of seaweed used in traditional stews and salads</li>
+                        <li>Pisco - Chile's national spirit, used in cooking and cocktails</li>
+                        <li>Quinoa - Ancient grain from the northern regions, rich in protein</li>
+                        <li>Fresh Seafood - Sea bass, salmon, mussels, and sea urchin from the Pacific</li>
+                        <li>Avocado (Palta) - Creamy avocados used in countless Chilean dishes</li>
+                    </ul>
+                </div>
+                
+                <p>These ingredients, combined with traditional cooking techniques passed down through generations, create the distinctive flavors that make Chilean cuisine so special. Understanding these key components helps appreciate the depth and complexity of Chilean culinary traditions.</p>
+            </section>
+
             <!-- Modern Chilean Gastronomy Section -->
-            <section class="section">
+            <section id="culture" class="section">
                 <h2>Modern Chilean Gastronomy</h2>
                 <p>Contemporary Chilean cuisine represents a remarkable evolution, seamlessly blending traditional recipes with innovative culinary techniques and international influences. Modern Chilean chefs have gained recognition for their creative interpretations of classic dishes, elevating humble ingredients into sophisticated presentations that honor both tradition and innovation.</p>
                 
@@ -673,7 +698,7 @@
             </section>
 
             <!-- AI Features Section -->
-            <section class="section">
+            <section id="ai-features" class="section">
                 <h2>🤖 AI-Powered Cooking Assistant</h2>
                 <p>Enhance your Chilean cooking experience with our intelligent features powered by Gemini AI.</p>
                 
@@ -752,7 +777,7 @@
             </section>
 
             <!-- Featured Recipes Section -->
-            <section class="section">
+            <section id="recipes" class="section">
                 <h2>Featured Chilean Recipes</h2>
                 <div class="recipe-grid">
                     <div class="recipe-card">
@@ -782,6 +807,24 @@
                         </div>
                     </div>
                 </div>
+            </section>
+
+            <!-- Contact Section -->
+            <section id="contact" class="section">
+                <h2>Contact Us</h2>
+                <p>Have questions about Chilean cuisine or need help with our AI features? We'd love to hear from you!</p>
+                
+                <div class="signature-box">
+                    <h3>Get in Touch:</h3>
+                    <ul>
+                        <li>📧 Email: info@chilean-cuisine.com</li>
+                        <li>📱 Phone: +56 2 1234 5678</li>
+                        <li>📍 Address: Santiago, Chile</li>
+                        <li>🌐 Website: www.chilean-cuisine.com</li>
+                    </ul>
+                </div>
+                
+                <p>Whether you're looking for recipe suggestions, ingredient substitutions, or just want to share your Chilean cooking adventures, our team is here to help. Follow us on social media for daily Chilean cooking tips and inspiration!</p>
             </section>
         </div>
     </main>
@@ -883,8 +926,23 @@
             container.innerHTML = html;
         }
 
-        // Smart Search
-        document.getElementById('smart-search-btn').addEventListener('click', async function() {
+        // Wait for DOM to be loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('DOM loaded, setting up Smart Search...');
+            
+            // Smart Search
+            const smartSearchBtn = document.getElementById('smart-search-btn');
+            const smartSearchInput = document.getElementById('smart-search-input');
+            
+            console.log('Smart Search Button:', smartSearchBtn);
+            console.log('Smart Search Input:', smartSearchInput);
+            
+            if (smartSearchBtn) {
+                console.log('Adding click listener to Smart Search button');
+                smartSearchBtn.addEventListener('click', async function() {
+                    console.log('Smart Search button clicked!');
+                    alert('Smart Search button was clicked! Checking query...');
+                    
             const query = document.getElementById('smart-search-input').value.trim();
             
             if (!query) {
@@ -922,7 +980,8 @@
                 button.disabled = false;
                 button.textContent = 'Get Smart Suggestions';
             }
-        });
+                });
+            }
 
         function displaySmartSearchResults(suggestions, container) {
             let html = '<h4>Smart Cooking Suggestions:</h4>';
@@ -970,8 +1029,10 @@
             container.innerHTML = html;
         }
 
-        // Meal Planning
-        document.getElementById('create-meal-plan').addEventListener('click', async function() {
+            // Meal Planning
+            const mealPlanBtn = document.getElementById('create-meal-plan');
+            if (mealPlanBtn) {
+                mealPlanBtn.addEventListener('click', async function() {
             const skillLevel = document.getElementById('skill-level').value;
             const prepTime = document.getElementById('prep-time').value;
             
@@ -1012,7 +1073,8 @@
                 button.disabled = false;
                 button.textContent = 'Create Meal Plan';
             }
-        });
+                });
+            }
 
         function displayMealPlan(mealPlan, container) {
             let html = '<h4>Your Weekly Meal Plan:</h4>';
@@ -1047,24 +1109,32 @@
             container.innerHTML = html;
         }
 
-        // Original search functionality
-        document.querySelector('.search-btn').addEventListener('click', function() {
-            const searchTerm = document.querySelector('.search-input').value;
-            if (searchTerm.trim()) {
-                alert('Searching for: ' + searchTerm);
+            // Original search functionality
+            const searchBtn = document.querySelector('.search-btn');
+            const searchInput = document.querySelector('.search-input');
+            
+            if (searchBtn) {
+                searchBtn.addEventListener('click', function() {
+                    const searchTerm = document.querySelector('.search-input').value;
+                    if (searchTerm.trim()) {
+                        alert('Searching for: ' + searchTerm);
+                    }
+                });
             }
-        });
 
-        document.querySelector('.search-input').addEventListener('keypress', function(e) {
-            if (e.key === 'Enter') {
-                document.querySelector('.search-btn').click();
+            if (searchInput) {
+                searchInput.addEventListener('keypress', function(e) {
+                    if (e.key === 'Enter') {
+                        document.querySelector('.search-btn').click();
+                    }
+                });
             }
-        });
 
-        document.querySelectorAll('.recipe-btn').forEach(button => {
-            button.addEventListener('click', function() {
-                const recipeName = this.parentElement.querySelector('h4').textContent;
-                alert('Opening recipe for: ' + recipeName);
+            document.querySelectorAll('.recipe-btn').forEach(button => {
+                button.addEventListener('click', function() {
+                    const recipeName = this.parentElement.querySelector('h4').textContent;
+                    alert('Opening recipe for: ' + recipeName);
+                });
             });
         });
     </script>
