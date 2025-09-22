@@ -885,7 +885,7 @@
             resultsDiv.classList.add('show');
 
             try {
-                const response = await fetch('/api/ai/ingredient-substitution', {
+                const response = await fetch('/.netlify/functions/ai-ingredient-substitution', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -959,7 +959,7 @@
             resultsDiv.classList.add('show');
 
             try {
-                const response = await fetch('/api/ai/smart-search', {
+                const response = await fetch('/.netlify/functions/ai-smart-search', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -1045,7 +1045,7 @@
             resultsDiv.classList.add('show');
 
             try {
-                const response = await fetch('/api/ai/meal-plan', {
+                const response = await fetch('/.netlify/functions/ai-meal-plan', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
