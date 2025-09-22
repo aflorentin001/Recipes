@@ -75,25 +75,9 @@ class AIService {
 
         try {
             const response = await this.generateResponse(prompt);
-            console.log('Raw AI response:', response);
-            
-            // Clean up the response to extract JSON
-            let cleanedResponse = response.trim();
-            
-            // Remove any markdown code blocks
-            cleanedResponse = cleanedResponse.replace(/```json\n?/g, '').replace(/```\n?/g, '');
-            
-            // Find JSON array in the response
-            const jsonMatch = cleanedResponse.match(/\[[\s\S]*\]/);
-            if (jsonMatch) {
-                cleanedResponse = jsonMatch[0];
-            }
-            
-            console.log('Cleaned response:', cleanedResponse);
-            return JSON.parse(cleanedResponse);
+            return JSON.parse(response);
         } catch (error) {
             console.error('Ingredient substitution error:', error);
-            console.error('Failed to parse AI response');
             // Fallback response
             return [{
                 substitute: "Check recipe notes",
@@ -148,25 +132,9 @@ class AIService {
 
         try {
             const response = await this.generateResponse(prompt);
-            console.log('Raw AI response:', response);
-            
-            // Clean up the response to extract JSON
-            let cleanedResponse = response.trim();
-            
-            // Remove any markdown code blocks
-            cleanedResponse = cleanedResponse.replace(/```json\n?/g, '').replace(/```\n?/g, '');
-            
-            // Find JSON object in the response
-            const jsonMatch = cleanedResponse.match(/\{[\s\S]*\}/);
-            if (jsonMatch) {
-                cleanedResponse = jsonMatch[0];
-            }
-            
-            console.log('Cleaned response:', cleanedResponse);
-            return JSON.parse(cleanedResponse);
+            return JSON.parse(response);
         } catch (error) {
             console.error('Shopping list generation error:', error);
-            console.error('Failed to parse AI response');
             // Fallback response
             return {
                 sections: [{
@@ -233,25 +201,9 @@ class AIService {
 
         try {
             const response = await this.generateResponse(prompt);
-            console.log('Raw AI response:', response);
-            
-            // Clean up the response to extract JSON
-            let cleanedResponse = response.trim();
-            
-            // Remove any markdown code blocks
-            cleanedResponse = cleanedResponse.replace(/```json\n?/g, '').replace(/```\n?/g, '');
-            
-            // Find JSON object in the response
-            const jsonMatch = cleanedResponse.match(/\{[\s\S]*\}/);
-            if (jsonMatch) {
-                cleanedResponse = jsonMatch[0];
-            }
-            
-            console.log('Cleaned response:', cleanedResponse);
-            return JSON.parse(cleanedResponse);
+            return JSON.parse(response);
         } catch (error) {
             console.error('Meal plan generation error:', error);
-            console.error('Failed to parse AI response');
             // Fallback response
             return {
                 week_plan: [
@@ -335,25 +287,9 @@ class AIService {
 
         try {
             const response = await this.generateResponse(prompt);
-            console.log('Raw AI response:', response);
-            
-            // Clean up the response to extract JSON
-            let cleanedResponse = response.trim();
-            
-            // Remove any markdown code blocks
-            cleanedResponse = cleanedResponse.replace(/```json\n?/g, '').replace(/```\n?/g, '');
-            
-            // Find JSON object in the response
-            const jsonMatch = cleanedResponse.match(/\{[\s\S]*\}/);
-            if (jsonMatch) {
-                cleanedResponse = jsonMatch[0];
-            }
-            
-            console.log('Cleaned response:', cleanedResponse);
-            return JSON.parse(cleanedResponse);
+            return JSON.parse(response);
         } catch (error) {
             console.error('Smart search error:', error);
-            console.error('Failed to parse AI response');
             // Fallback response
             return {
                 primary_suggestions: [
