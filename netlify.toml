@@ -12,17 +12,12 @@
   # Node.js version
   NODE_VERSION = "18"
 
-# Redirect all API calls to serverless functions
-[[redirects]]
-  from = "/api/*"
-  to = "/.netlify/functions/:splat"
-  status = 200
-
-# Redirect all other routes to index.html for SPA behavior
+# Redirect all routes to index.html for SPA behavior (except functions and assets)
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
+  force = false
 
 # Headers for security
 [[headers]]
